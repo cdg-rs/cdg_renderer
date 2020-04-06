@@ -22,7 +22,7 @@ fn main() {
     while let Some(sector) = scsi.next() {
         if sector_no != 0 && sector_no % SECTORS_PER_FRAME == 0 {
             // render a frame
-            res_image.copy_from(&interp, 0, 0);
+            res_image.copy_from(&interp, 0, 0).expect("faild to copy frame");
             // for now, don't dump; just benchmarking
 
             res_image.save(format!("{}/frame_{:05}.png", destdir, frame_no)).unwrap();
