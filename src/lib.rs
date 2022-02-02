@@ -293,9 +293,9 @@ impl image::GenericImageView for CdgInterpreter {
         let cindex = self.content[self.map_pxrow(y as usize)][self.map_pxcol(x as usize)];
         let c = self.clut[cindex as usize];
         if self.transparent == cindex {
-            image::Rgba::from_channels(c.r(), c.g(), c.b(), 0)
+            *Pixel::from_slice(&[c.r(), c.g(), c.b(), 0])
         } else {
-            image::Rgba::from_channels(c.r(), c.g(), c.b(), 255)
+            *Pixel::from_slice(&[c.r(), c.g(), c.b(), 255])
         }
     }
 }
