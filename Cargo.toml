@@ -11,4 +11,4 @@ keywords = ["cdg", "karaoke"]
 
 [dependencies]
 cdg = "0.1"
-image = { version = "0.23", default-features = false }
+image = { version = "0.24", default-features = false }

@@ -279,7 +279,6 @@ impl CdgInterpreter {
 
 impl image::GenericImageView for CdgInterpreter {
     type Pixel = image::Rgba<u8>;
-    type InnerImageView = Self;
 
     fn dimensions(&self) -> (u32, u32) {
         (300, 216)
@@ -298,10 +297,6 @@ impl image::GenericImageView for CdgInterpreter {
         } else {
             image::Rgba::from_channels(c.r(), c.g(), c.b(), 255)
         }
-    }
-
-    fn inner(&self) -> &Self::InnerImageView {
-        self
     }
 }
 
