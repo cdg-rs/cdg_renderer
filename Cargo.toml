@@ -12,3 +12,10 @@ keywords = ["cdg", "karaoke"]
 [dependencies]
 cdg = "0.1"
 image = { version = "0.25", default-features = false }
+
+[features]
+png = ["image/png"]
+
+[[example]]
+name = "frame_dumper"
+required-features = ["png"]
