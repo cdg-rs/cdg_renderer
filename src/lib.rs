@@ -284,10 +284,6 @@ impl image::GenericImageView for CdgInterpreter {
         (300, 216)
     }
 
-    fn bounds(&self) -> (u32, u32, u32, u32) {
-        (0, 0, 300, 216)
-    }
-
     fn get_pixel(&self, x: u32, y: u32) -> Self::Pixel {
         use image::Pixel;
         let cindex = self.content[self.map_pxrow(y as usize)][self.map_pxcol(x as usize)];
